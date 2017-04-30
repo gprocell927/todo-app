@@ -1,0 +1,13 @@
+.List {
+  background-color: white;
+  box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.125rem;
+}
+
+.List ul {
+  margin-bottom: 2rem;
+}
+
+.List li {
+  list-style: none;
+}

@@ -1,0 +1,13 @@
+.CreateItemButton {
+  display: block;
+  color: #999;
+  font-weight: 300;
+  margin: 0rem 2rem;
+}
+
+.CreateItemButton span {
+  color: rgb(64, 169, 181);
+  font-size: 2rem;
+  font-weight: 100;
+  margin-right: 1rem;
+}

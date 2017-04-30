@@ -1,0 +1,49 @@
+.Calendar {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.Calendar h3 {
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+.Calendar .row {
+  position: relative;
+  top: -1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Calendar .row div {
+  width: 20%;
+}
+
+.Calendar .row div.date {
+  width: 60%;
+}
+
+.Calendar .previous, .Calendar .next {
+  transform: translateY(2rem);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.Calendar .date {
+  position: relative;
+  top: -1rem;
+  vertical-align: text-top;
+}
+
+.Calendar .date span {
+  position: relative;
+  font-size: 4rem;
+  margin: 0rem 1.5rem;
+  font-weight: 600;
+  top: 1rem;
+}
