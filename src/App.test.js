@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer'
 import { shallow, mount } from 'enzyme';
 import App from './App';
+import moment from 'moment';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -10,16 +11,44 @@ it('renders without crashing', () => {
 });
 
 it('renders a list of todo items', () => {
-  const wrapper = mount(<App />)
+  const todos = [
+    {
+      due_date: moment(),
+      description: "One"
+    },
+    {
+      due_date: moment(),
+      description: "Two"
+    },
+    {
+      due_date: moment(),
+      description: "Three"
+    }
+  ]
+  const wrapper = mount(<App todos={todos}/>)
 
   expect(wrapper.find('li')).toHaveLength(3)
   expect(wrapper.find('li').at(0).text()).toEqual('One')
   expect(wrapper.find('li').at(1).text()).toEqual('Two')
   expect(wrapper.find('li').at(2).text()).toEqual('Three')
-}) // Will not pass because the current day is rendered when app loads. JSON data is for a different date. Figure out how to test for a different date, or dynamically add today's date in JSON date.
+})
 
 it('adds a new todo item to the list', () => {
-  const wrapper = mount(<App />)
+  const todos = [
+    {
+      due_date: moment(),
+      description: "One"
+    },
+    {
+      due_date: moment(),
+      description: "Two"
+    },
+    {
+      due_date: moment(),
+      description: "Three"
+    }
+  ]
+  const wrapper = mount(<App todos={todos}/>)
 
   expect(wrapper.find('li')).toHaveLength(3)
 

@@ -5,13 +5,6 @@ import './App.css';
 import Calendar from './Calendar';
 import List from './List';
 
-let todos = require('./todos.json')
-todos = todos.map((item) => {
-  return {
-    due_date: moment(item.due_date),
-    description: item.description
-  }
-})
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +13,7 @@ class App extends Component {
     this.state = {
       adding: false,
       date: moment(),
-      items: todos,
+      items: this.props.todos,
     }
   }
 

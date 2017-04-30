@@ -4,13 +4,16 @@ import './Calendar.css';
 class Calendar extends Component {
   render() {
     const { date, previous, today, next } = this.props
-
+    const yesterday = date.clone().subtract(1, 'day')
+    const tomorrow = date.clone().add(1, 'day')
     return (
       <div className="Calendar">
         <h3>Today</h3>
         <div className="row">
           <div className="previous">
-            <a onClick={() => previous()}>Yesterday</a>
+            <a onClick={() => previous()}>
+              {yesterday.format('DD MMM')}
+            </a>
           </div>
           <div className="date">
             <a onClick={() => today()}>
@@ -20,7 +23,9 @@ class Calendar extends Component {
             </a>
           </div>
           <div className="next">
-            <a onClick={() => next()}>Tomorrow</a>
+            <a onClick={() => next()}>
+              {tomorrow.format('DD MMM')}
+            </a>
           </div>
         </div>
       </div>
