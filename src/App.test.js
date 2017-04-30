@@ -18,6 +18,7 @@ it('renders a list of todo items', () => {
   expect(wrapper.find('li').at(2).text()).toEqual('Three')
 }) // Will not pass because the current day is rendered when app loads. JSON data is for a different date. Figure out how to test for a different date, or dynamically add today's date in JSON date.
 
+
 it('adds a new todo item to the list', () => {
   const wrapper = mount(<App />)
 

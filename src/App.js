@@ -5,13 +5,26 @@ import './App.css';
 import Calendar from './Calendar';
 import List from './List';
 
-let todos = require('./todos.json')
-todos = todos.map((item) => {
-  return {
-    due_date: moment(item.due_date),
-    description: item.description
-  }
-})
+const getTodos = () => {
+  const server = ('http://localhost:3000/todos')
+  fetch(server, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+  })
+  .then(res => res.json())
+  .then(res => console.log(res.todos)
+  //res.todos.map((item) => {
+  //   return {
+  //     due_date: moment(item.due_date),
+  //     description: item.description
+  //   }
+  //   }
+  //  )
+  ) 
+}
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +33,7 @@ class App extends Component {
     this.state = {
       adding: false,
       date: moment(),
-      items: todos,
+      items: getTodos(),
     }
   }
 
