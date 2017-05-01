@@ -18,7 +18,9 @@ class List extends Component {
             <ul>
               {items.map((item, index) => {
                 return (
-                  <li key={index}>{item.description}</li>
+                  <li
+                    key={index}>{item.description}
+                  </li>
                 )
               })}
             </ul>}
