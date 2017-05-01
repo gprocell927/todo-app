@@ -8,7 +8,11 @@ class Calendar extends Component {
     const tomorrow = date.clone().add(1, 'day')
     return (
       <div className="Calendar">
-        <h3>Today</h3>
+        <div className="today">
+          <a onClick={() => today()}>
+            <span>Today</span>
+          </a>
+        </div>
         <div className="row">
           <div className="previous">
             <a onClick={() => previous()}>
