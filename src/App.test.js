@@ -33,7 +33,7 @@ it('renders a list of todo items', () => {
   expect(wrapper.find('li').at(2).text()).toEqual('Three')
 })
 
-it.only('adds a new todo item to the list', () => {
+it('adds a new todo item to the list', () => {
   const todos = [
     {
       due_date: moment(),
@@ -71,7 +71,26 @@ it('filters todo items by date', () => {
 })
 
 it('displays summary statement', () => {
-  const wrapper = mount(<App />)
+  const todos = [
+    {
+      due_date: moment(),
+      description: "One"
+    },
+    {
+      due_date: moment(),
+      description: "Two"
+    },
+    {
+      due_date: moment(),
+      description: "Three"
+    },
+    {
+      due_date: moment().add(1, 'day'),
+      description: "Four"
+    }
+  ]
+
+  const wrapper = mount(<App todos={todos}/>)
 
   expect(wrapper.find('.Summary p').text()).toEqual('Only 3 Tasks')
 
