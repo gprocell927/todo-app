@@ -6,9 +6,9 @@ class Summary extends Component {
     let statement = `Only <span>${items.length}</span> Tasks. Relax or add one below.`
 
     if (items.length === 1) {
-      statement = 'Only <span>1</span> Task'
+      statement = 'Only <span>1</span> Task Left Today! Awesome!'
     } else if (items.length > 1) {
-      statement = `Only <span>${items.length}</span> Tasks`
+      statement = `Only <span>${items.length}</span> Tasks Left Today! Awesome!`
     }
 
     return {__html: statement}

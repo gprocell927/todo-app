@@ -52,7 +52,8 @@ it.only('adds a new todo item to the list', () => {
 
   expect(wrapper.find('li')).toHaveLength(3)
 
-  wrapper.find('button').last().simulate('click')
+  wrapper.find('a').last().simulate('click')
+  wrapper.
   expect(wrapper.find('li')).toHaveLength(4)
 })
 
