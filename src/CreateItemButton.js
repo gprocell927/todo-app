@@ -18,13 +18,24 @@ class CreateItemButton extends Component {
   }
 
   render() {
-    const { adding, } = this.state
+    const { adding, newItem, } = this.state
 
     return (
       <div className="CreateItemButton">
-        <a onClick={this._toggleAdding.bind(this)}>
+        <a onClick={ this._toggleAdding.bind(this) }>
           {adding ?
-              <p><input autoFocus /><button onClick={this.props.click}>Add</button></p> :
+              <p>
+                <input
+                  className="NewItemInput"
+                  autoFocus
+                  onChange={ (e) => this.setState({ newItem: e.target.value }) }
+                />
+                <button
+                  onClick={this.props.click}
+                >
+                  Add
+                </button>
+              </p> :
             <p><span>+</span> Add New Task</p>}
         </a>
       </div>

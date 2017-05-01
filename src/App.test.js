@@ -33,7 +33,7 @@ it('renders a list of todo items', () => {
   expect(wrapper.find('li').at(2).text()).toEqual('Three')
 })
 
-it('adds a new todo item to the list', () => {
+it.only('adds a new todo item to the list', () => {
   const todos = [
     {
       due_date: moment(),
@@ -52,7 +52,7 @@ it('adds a new todo item to the list', () => {
 
   expect(wrapper.find('li')).toHaveLength(3)
 
-  wrapper.find('a').last().simulate('click')
+  wrapper.find('button').last().simulate('click')
   expect(wrapper.find('li')).toHaveLength(4)
 })
 
