@@ -24,7 +24,7 @@ class CreateItemButton extends Component {
       <div className="CreateItemButton">
         <a onClick={this._toggleAdding.bind(this)}>
           {adding ?
-              <p><input /></p> :
+              <p><input autoFocus /><button onClick={this.props.click}>Add</button></p> :
             <p><span>+</span> Add New Task</p>}
         </a>
       </div>

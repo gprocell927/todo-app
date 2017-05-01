@@ -10,7 +10,7 @@ todos = todos.map((item) => {
     due_date: moment(item.due_date),
     description: item.description
   }
-})
+})// Mapped through todos in index to be able to test it more easily and pass it directly into App from ReactDOM.render
 
 
 ReactDOM.render(
