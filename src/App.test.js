@@ -58,7 +58,26 @@ it('adds a new todo item to the list', () => {
 })
 
 it('filters todo items by date', () => {
-  const wrapper = mount(<App />)
+  const todos = [
+    {
+      due_date: moment(),
+      description: "One"
+    },
+    {
+      due_date: moment(),
+      description: "Two"
+    },
+    {
+      due_date: moment(),
+      description: "Three"
+    },
+    {
+      due_date: moment().add(1, 'day'),
+      description: "Four"
+    }
+  ]
+
+  const wrapper = mount(<App todos={todos}/>)
 
   expect(wrapper.find('li')).toHaveLength(3)
 
